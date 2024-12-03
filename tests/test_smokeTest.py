@@ -63,7 +63,7 @@ class TestSmokeTest():
     elements = self.driver.find_elements(By.NAME, "submit")
     assert len(elements) > 0
     self.driver.find_element(By.NAME, "submit").click()
-    WebDriverWait(self.driver, NaN).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".myinput:nth-child(2)")))
+    WebDriverWait(self.driver, 1).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".myinput:nth-child(2)")))
     elements = self.driver.find_elements(By.NAME, "email")
     assert len(elements) > 0
   
