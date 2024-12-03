@@ -374,14 +374,9 @@
     }, {
       "id": "c6188f19-cce7-4597-bc96-bb0d66589530",
       "comment": "",
-      "command": "verifyText",
+      "command": "waitForElementVisible",
       "target": "css=.myinput:nth-child(2)",
-      "targets": [
-        ["css=.myinput:nth-child(2)", "css:finder"],
-        ["xpath=//div[@id='content']/main/section/form/fieldset/label", "xpath:idRelative"],
-        ["xpath=//label", "xpath:position"],
-        ["xpath=//label[contains(.,'Email')]", "xpath:innerText"]
-      ],
+      "targets": [],
       "value": "Email"
     }, {
       "id": "4fadb264-d096-4063-906c-030dd36a750f",

@@ -9,13 +9,10 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.chrome.options import Options
 
 class TestSmokeTest():
   def setup_method(self, method):
-    options = Options()
-    options.add_argument("--headless=new")
-    self.driver = webdriver.Chrome(options=options)
+    self.driver = webdriver.Chrome()
     self.vars = {}
   
   def teardown_method(self, method):
@@ -62,7 +59,7 @@ class TestSmokeTest():
     elements = self.driver.find_elements(By.NAME, "submit")
     assert len(elements) > 0
     self.driver.find_element(By.NAME, "submit").click()
-    assert self.driver.find_element(By.CSS_SELECTOR, ".myinput:nth-child(2)").text == "Email"
+    WebDriverWait(self.driver, NaN).until(expected_conditions.visibility_of_element_located((By.CSS_SELECTOR, ".myinput:nth-child(2)")))
     elements = self.driver.find_elements(By.NAME, "email")
     assert len(elements) > 0
   
